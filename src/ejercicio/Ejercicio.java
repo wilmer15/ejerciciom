@@ -5,6 +5,9 @@
  */
 package ejercicio;
 
+import DB.ArchivoDB;
+import java.io.*;
+
 /**
  *
  * @author Estudiante
@@ -22,6 +25,7 @@ public class Ejercicio {
         Administrador a= null;
         try{
            a= new Administrador("A",500, 2);
+           emp.agregarTrabajador(a);
         }catch(ExcepcionNombre e){
             e.printStackTrace();
         }catch( ExcepcionSalario b){
@@ -31,6 +35,7 @@ public class Ejercicio {
         Programador p= null;
         try{
         p= new Programador("Camilo",789000, 34, "java");
+        emp.agregarTrabajador(p);
         }catch(ExcepcionNombre e){
             e.printStackTrace();
         }catch( ExcepcionSalario b){
@@ -43,6 +48,7 @@ public class Ejercicio {
         try{
           lp=new LiderProyecto("Andres", 856, 3, "java");
           lp.agregarProgramador(p);
+          emp.agregarTrabajador(lp);
         }catch(ExcepcionNombre e){
             e.printStackTrace();
         }catch( ExcepcionSalario b){
@@ -51,6 +57,15 @@ public class Ejercicio {
            g.printStackTrace();
         }
                 
+        
+        ArchivoDB arc = new ArchivoDB();
+        
+        try{
+             arc.guardarInformacion(emp);
+        }catch(FileNotFoundException e){
+            e.printStackTrace();
+        }
+       
         
                 
     }

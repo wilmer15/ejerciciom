@@ -5,9 +5,11 @@
  */
 package DB;
 
+import com.sun.istack.internal.logging.Logger;
 import ejercicio.*;
 
 import java.io.*;
+import java.util.*;
 
 
 /**
@@ -40,6 +42,35 @@ public class ArchivoDB {
            }
             
            }
-            
+            salida.close();
+    }
+    public Empresa cargarInformacion(){
+        File archivo = new File("empresa.txt");
+        String tipo="";
+        try{
+            Scanner lectura = new Scanner(archivo);
+            lectura.useDelimiter(",");
+            while(lectura.hasNext()){
+                tipo=lectura.next();
+                if(tipo.equals("C")){
+                    System.out.println("ID " +lectura.nextInt());
+                    System.out.println("Labor " +lectura.next());
+                    
+                }else if(tipo.equals("A")){
+                    System.out.println("ID " +lectura.nextInt());
+                    System.out.println("Nombre " + lectura.next());
+                    System.out.println("Salario " + lectura.nextDouble());
+                }
+                
+                
+                
+                System.out.println(lectura.next());
+            }
+            lectura.close();
+        }catch(FileNotFoundException ex){
+      
+        }
+        return null;
+      
     }
 }
