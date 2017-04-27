@@ -13,7 +13,10 @@ import java.util.ArrayList;
  */
 public class Empresa {
     private ArrayList<Trabajador> trabajadores;
-    
+
+    public ArrayList<Trabajador> getTrabajadores() {
+        return trabajadores;
+    }
     public Empresa(){
         this.trabajadores = new ArrayList<>();
     }

@@ -17,6 +17,10 @@ public abstract class Trabajador {
     }
     public abstract double Clacularsalario();
     public abstract String listarInformacion();
+
+    public int getId() {
+        return id;
+    }
         
     
     

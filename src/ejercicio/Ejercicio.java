@@ -15,7 +15,44 @@ public class Ejercicio {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         // TODO code application logic here
+        Empresa emp = new Empresa();
+        Consultor c = new Consultor("Ing", 1);
+        Administrador a= null;
+        try{
+           a= new Administrador("A",500, 2);
+        }catch(ExcepcionNombre e){
+            e.printStackTrace();
+        }catch( ExcepcionSalario b){
+           b.printStackTrace();
+        }
+        
+        Programador p= null;
+        try{
+        p= new Programador("Camilo",789000, 34, "java");
+        }catch(ExcepcionNombre e){
+            e.printStackTrace();
+        }catch( ExcepcionSalario b){
+           b.printStackTrace();
+        }catch(ExcepcionLenguaje g){
+           g.printStackTrace();
+        }
+        
+        LiderProyecto lp= null;     
+        try{
+          lp=new LiderProyecto("Andres", 856, 3, "java");
+          lp.agregarProgramador(p);
+        }catch(ExcepcionNombre e){
+            e.printStackTrace();
+        }catch( ExcepcionSalario b){
+           b.printStackTrace();
+        }catch(ExcepcionLenguaje g){
+           g.printStackTrace();
+        }
+                
+        
+                
     }
     
 }

@@ -12,9 +12,19 @@ package ejercicio;
 public class Consultor extends Trabajador{
     protected String Labor;
 
-    public Consultor(int id, String labor) {
+    public Consultor( String labor,int id) {
         super(id);
         this.Labor=labor;
+    }
+    
+    @Override
+    public int getId() {
+        return id;
+    }
+       
+
+    public String getLabor() {
+        return Labor;
     }
 
     @Override

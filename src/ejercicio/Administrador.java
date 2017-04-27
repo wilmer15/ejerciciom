@@ -11,18 +11,27 @@ package ejercicio;
  */
 public class Administrador extends Empleados{
 
-    public Administrador(String nombre, double salario, int id) {
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public Administrador(String nombre, double salario, int id) throws ExcepcionNombre, ExcepcionSalario {
         super(nombre,salario,id);
-        
     }
     
     
     
     
+    @Override
     public double Clacularsalario() {
         return 100;
     }
 
+    @Override
     public String listarInformacion() {
          return "Administrador " + this.id + " " + this.nombre;
     }

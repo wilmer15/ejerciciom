@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class LiderProyecto extends Programador{
     private ArrayList<Programador> programadores;
 
-    public LiderProyecto(String nombre, double salario, int id, String Lenguaje) {
+    public LiderProyecto(String nombre, double salario, int id, String Lenguaje) throws ExcepcionNombre, ExcepcionSalario, ExcepcionLenguaje {
         super(nombre, salario, id, Lenguaje);
     }
     
@@ -27,6 +27,22 @@ public class LiderProyecto extends Programador{
          double salarioTotal=0;
          salarioTotal+=super.Clacularsalario()*(super.Clacularsalario()*this.programadores.size()*0.1);
          return salarioTotal;
+    }
+
+    public ArrayList<Programador> getProgramadores() {
+        return programadores;
+    }
+
+    public String getLenguaje() {
+        return lenguaje;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getSalario() {
+        return salario;
     }
 
 

@@ -12,9 +12,25 @@ package ejercicio;
 public class Programador extends Empleados {
     protected String lenguaje;
 
-    public Programador(String nombre, double salario, int id, String Lenguaje) {
+    public Programador(String nombre, double salario, int id, String Lenguaje) 
+            throws ExcepcionNombre, ExcepcionSalario, ExcepcionLenguaje {
         super(nombre, salario, id);
+        if(Lenguaje.equals("go")){
+            throw new ExcepcionLenguaje();
+        }
         this.lenguaje = Lenguaje;
+    }
+
+    public String getLenguaje() {
+        return lenguaje;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getSalario() {
+        return salario;
     }
 
     @Override
